@@ -19,14 +19,16 @@ Import the new html templates names into todo.views to make it accessible to url
 """
 from django.contrib import admin
 from django.urls import path
-from todo.views import get_todo_list, add_item, edit_item
+from todo import views
 
 """
 path (URL, VIEW, NAME)
 """
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_todo_list, name='get_todo_list'),
-    path('add', add_item, name='add'),
-    path('edit/<item_id>', edit_item, name='edit'),
+    path('', views.get_todo_list, name='get_todo_list'),
+    path('add', views.add_item, name='add'),
+    path('edit/<item_id>', views.edit_item, name='edit'),
+    path('toggle/<item_id>', views.toggle_item, name='toggle'),
+    path('delete/<item_id>', views.delete_item, name='delete'),
 ]
