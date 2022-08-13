@@ -16,7 +16,12 @@
                     <td><strike>{{ item.name }}</strike></td>
                 {% else %}
                     <td>{{ item.name }}</td>
-                {% endif %} 
+                {% endif %}
+                <td>
+                    <a href="/edit/{{ item.id }}">
+                        <button>Edit</button>
+                    </a>
+                </td> 
             </tr>
         <!-- If there are no todo items, display message. -->
         {% empty %}
